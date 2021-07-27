@@ -5,9 +5,12 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FileManager
-{
+namespace FileManager {
     public partial class Form1 : Form {
+        private bool winstate = false;
+        private bool mouseDown;
+        private Point lastLocation;
+
         public static List<string> files = new List<string>();
         public static string path;
         public static int oldfileCount;
@@ -112,7 +115,49 @@ namespace FileManager
         }
 
         private void deleteDuplicates_Click(object sender, EventArgs e) {
+            // Work in progress... plans for this is we're gonna try to match files meta data
+            // to check if there is a match
+        }
 
+        private void TitleBarOptions(object sender, EventArgs e) {
+            var b = (FileManagerUI.FMButton)sender;
+
+            switch (b.Name) {
+                case "TitleBarClose":
+                    Application.Exit();
+                    break;
+                case "TitleBarWindowState":
+                    winstate = !winstate;
+
+                    if (winstate) {
+                        this.WindowState = FormWindowState.Maximized;
+                        b.Text = "2";
+                    } 
+                    else {
+                        this.WindowState = FormWindowState.Normal;
+                        b.Text = "1";
+                    }
+                    break;
+                case "TitleBarMinimize":
+                    this.WindowState = FormWindowState.Minimized;
+                    break;
+            }
+        }
+
+        private void DragStart(object sender, MouseEventArgs e) {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void DragMove(object sender, MouseEventArgs e) {
+            if (mouseDown) {
+                Location = new Point(Location.X - lastLocation.X + e.X, Location.Y - lastLocation.Y + e.Y);
+                Update();
+            }
+        }
+
+        private void DragStop(object sender, MouseEventArgs e) {
+            mouseDown = false;
         }
     }
 }
