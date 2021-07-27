@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager.csproj", "{DC15C9D5-FF1E-4BEF-AB68-883F582E5F4C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99C22708-EAA2-411E-BA1B-B3C8EB627ABE} = {99C22708-EAA2-411E-BA1B-B3C8EB627ABE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagerUI", "..\FileManagerUI\FileManagerUI.csproj", "{99C22708-EAA2-411E-BA1B-B3C8EB627ABE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC15C9D5-FF1E-4BEF-AB68-883F582E5F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC15C9D5-FF1E-4BEF-AB68-883F582E5F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC15C9D5-FF1E-4BEF-AB68-883F582E5F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC15C9D5-FF1E-4BEF-AB68-883F582E5F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C22708-EAA2-411E-BA1B-B3C8EB627ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C22708-EAA2-411E-BA1B-B3C8EB627ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C22708-EAA2-411E-BA1B-B3C8EB627ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C22708-EAA2-411E-BA1B-B3C8EB627ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CC2B15B-CE4C-49BB-8EE9-31DC4C581D6B}
+	EndGlobalSection
+EndGlobal
