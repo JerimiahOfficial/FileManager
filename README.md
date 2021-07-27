@@ -8,6 +8,9 @@ Simple program to manage files in large quantities, and this includes deleting a
 Some folders with alot of files may take longer to load as they contain alot of file for the program to read. This could also have to do with your system and how it indexes files.
 ### Clean and easy to use UI
 Fresh start:
+
 ![image](https://user-images.githubusercontent.com/38990407/127236438-f356d504-4f12-4365-ae15-a52f6e30b35f.png)
+
 Opened folder:
+
 ![image](https://user-images.githubusercontent.com/38990407/127236531-a17bc637-8fa0-44ff-a7d6-cfb3301355c9.png)
