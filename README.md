@@ -1,5 +1,7 @@
 # FileManager
 Simple program to manage files in large quantities, and this includes deleting and renaming.
+### Some features are W.I.P
+Features like copy to clipboard or delete duplicates are W.I.P and currently don't work.
 ### How to use
 1. Click the "open folder" button to selected a folder.
 2. There are many options for you to choose rename, delete, open and open file locaiton.
