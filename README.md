@@ -1,2 +1,2 @@
 # FileManager
-Simple program to manager files in large quantities
+Simple program to manage files in large quantities, and this includes deleting and renaming.
