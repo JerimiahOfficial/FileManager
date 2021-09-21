@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="folder.png" />
+    <None Remove="icons\Close.png" />
+    <None Remove="icons\Copy.png" />
+    <None Remove="icons\Delete.png" />
+    <None Remove="icons\Folder.png" />
+    <None Remove="icons\Icon.ico" />
+    <None Remove="icons\Minimize.png" />
+    <None Remove="icons\Open.png" />
+    <None Remove="icons\Rename.png" />
+    <None Remove="icons\Search.png" />
+    <None Remove="icons\Tools.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\Close.png" />
+    <Resource Include="icons\Copy.png" />
+    <Resource Include="icons\Delete.png" />
+    <Resource Include="icons\Folder.png" />
+    <Resource Include="icons\Icon.ico" />
+    <Resource Include="icons\Minimize.png" />
+    <Resource Include="icons\Open.png" />
+    <Resource Include="icons\Rename.png" />
+    <Resource Include="icons\Search.png" />
+    <Resource Include="icons\Tools.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="InputWindow - Copy.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>InputWindow.xaml.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
