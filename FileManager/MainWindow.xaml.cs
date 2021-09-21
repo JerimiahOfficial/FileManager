@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -95,19 +97,29 @@ namespace FileManager
                 folderViewUpdate(path);
             }
         }
-        public static bool AreFileContentsEqual(string path1, string path2) => File.ReadAllBytes(path1).SequenceEqual(File.ReadAllBytes(path2));
+
+        static string GetHash(string path)
+        {
+            using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                return Encoding.UTF8.GetString(new SHA1Managed().ComputeHash(fileStream));
+            }
+        }
 
         private void DeleteAllDupes()
         {
-            foreach (var f1 in files)
+            var DW = new DeleteWindow();
+            if (DW.ShowDialog() == true)
             {
-                foreach (var f2 in files.Skip(1))
-                {
-                    if (AreFileContentsEqual(f1, f2))
-                        File.Delete(f2);
+                Directory.GetFiles(path)
+                    .Select(f => new { FileName = f, FileHash = GetHash(f) })
+                    .GroupBy(f => f.FileHash)
+                    .Select(g => new { FileHash = g.Key, Files = g.Select(z => z.FileName).ToList() })
+                    .SelectMany(f => f.Files.Skip(1))
+                    .ToList()
+                    .ForEach(File.Delete);
 
-                    folderViewUpdate(path);
-                }
+                folderViewUpdate(path);
             }
         }
 
